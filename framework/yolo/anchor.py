@@ -8,10 +8,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from code.yolo.kmeans import kmeans, avg_iou
-
-ANNOTATIONS_PATH = "Annotations"
-CLUSTERS = 5
+from framework.yolo.kmeans import kmeans, avg_iou
 
 
 def load_voc_dataset(path):

@@ -6,14 +6,14 @@ import json
 from math import floor, sin, cos, pi, atan
 from typing import List
 
-from code.sample.model import Sample, Annotation, Label, Point, Box
+from framework.sample.model import Sample, Annotation, Label, Point, Box
 
 from PIL import Image
 
 
 def load_annotation(file_path: str, a_type: str, auxiliary_name: str):
     """
-
+    load VOC or labelme annotation as custom annotation object
     :param file_path: annotation file path
     :param a_type: VOC or labelme
     :param auxiliary_name: if have auxiliary field, name it
@@ -61,7 +61,7 @@ def load_annotation(file_path: str, a_type: str, auxiliary_name: str):
 
 def transform_annotation(old_annotation: Annotation, transform_type, **kwargs):
     """
-    转换样本标签
+    transform annotation with image augmentation
     :param old_annotation:
     :param transform_type:
     :param kwargs:

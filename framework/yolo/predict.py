@@ -12,8 +12,8 @@ from keras.models import load_model
 from keras.layers import Input
 from PIL import Image, ImageFont, ImageDraw
 
-from code.yolo.model import yolo_eval, yolo_body, tiny_yolo_body
-from code.yolo.utils import letterbox_image
+from framework.yolo.model import yolo_eval, yolo_body, tiny_yolo_body
+from framework.yolo.utils import letterbox_image
 import os
 from keras.utils import multi_gpu_model
 
@@ -27,7 +27,7 @@ class YOLO(object):
         "iou": 0.3,
         "model_image_size": (416, 416),
         "gpu_num": 1,
-        "font_path": "font/FiraMono-Medium.otf"
+        "font_path": "../../workspace/detection_model/model_data/font/FiraMono-Medium.otf"
     }
 
     @classmethod

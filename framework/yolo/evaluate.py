@@ -9,20 +9,20 @@ from timeit import default_timer as timer
 import pandas as pd
 from PIL import Image, ImageDraw
 
-from code.yolo import predict
-from code.sample.model import Box
+from framework.yolo import predict
+from framework.sample.model import Box
 
 
-def init_yolo(model_path, anchors_path, classes_path, score, iou):
+def init_yolo(model_path, anchors_path, classes_path, score=0.3, iou=0.3, input_size=(416, 416), gpu_num=2):
     config = {
         "model_path": model_path,
         "anchors_path": anchors_path,
         "classes_path": classes_path,
         "score": score,
         "iou": iou,
-        "model_image_size": (416, 416),
-        "gpu_num": 2,
-        "font_path": "font/FiraMono-Medium.otf"
+        "model_image_size": input_size,
+        "gpu_num": gpu_num,
+        "font_path": "../../workspace/detection_model/model_data/font/FiraMono-Medium.otf"
     }
     yolo = predict.YOLO(**config)
     return yolo
